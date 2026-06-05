@@ -3,9 +3,8 @@
 //  All HTTP calls to the Express backend.
 //  If you change the backend URL, only edit BASE_URL.
 // ==============================================
-
-const BASE_URL = "https://expense-tracker-7498.onrender.com/api"; // proxied to http://localhost:5000 via package.json "proxy"
-
+ // proxied to http://localhost:5000 via package.json "proxy"
+const BASE_URL = "https://expense-tracker-7498.onrender.com";
 // ── Expense CRUD ──────────────────────────────
 
 /** GET all expenses (optional filters: category, month) */
