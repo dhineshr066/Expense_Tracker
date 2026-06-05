@@ -8,146 +8,103 @@ A modern web-based Expense Tracker application that helps users manage their dai
 https://expense-tracker-5-wa2u.onrender.com
 
 ---
+# 💰 Smart Expense Tracker
 
-## 🚀 Features
-
-* User Registration & Login
-* Secure Authentication System
-* Add, Edit, and Delete Expenses
-* Categorize Expenses
-* Track Spending History
-* Interactive Dashboard
-* Financial Summary & Insights
-* Responsive Design
-* Real-Time Expense Management
+A full-stack web application to track and manage expenses.
 
 ---
 
-## 🛠️ Technologies Used
+## 📁 Project Structure
 
-### Frontend
-
-* HTML5
-* CSS3
-* JavaScript
-* Bootstrap
-
-### Backend
-
-* Python
-* Flask
-
-### Database
-
-* SQLite / MySQL
-
-### Deployment
-
-* Render
-
----
-
-## 📂 Project Structure
-
-```text
-Expense-Tracker/
+```
+expense-tracker/
+├── backend/
+│   ├── middleware/
+│   │   ├── logger.js           ← Logs every HTTP request
+│   │   └── errorHandler.js     ← Central error handler
+│   ├── models/
+│   │   └── Expense.js          ← MongoDB schema
+│   ├── routes/
+│   │   └── expenseRoutes.js    ← CRUD REST API
+│   ├── .env                    ← Your keys go here
+│   ├── server.js               ← Entry point
+│   └── package.json
 │
-├── app.py
-├── requirements.txt
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── templates/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   └── dashboard.html
-│
-└── database/
+└── frontend/
+    ├── public/index.html
+    └── src/
+        ├── components/
+        │   ├── AddExpenseForm.js
+        │   ├── Dashboard.js
+        │   ├── ExpenseList.js
+        │   └── Toast.js
+        ├── context/
+        │   └── ExpenseContext.js
+        ├── utils/
+        │   ├── api.js
+        │   ├── constants.js
+        │   └── helpers.js
+        ├── App.js
+        ├── App.css
+        └── index.js
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 How to Run
 
-### Clone Repository
-
-```bash
-git clone https://github.com/your-username/expense-tracker.git
-cd expense-tracker
-```
-
-### Create Virtual Environment
+### Step 1 — Setup Backend
 
 ```bash
-python -m venv venv
+cd expense-tracker/backend
+npm install
 ```
 
-### Activate Environment
-
-**Windows**
+Edit `.env` file:
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+Get free MongoDB Atlas at: https://www.mongodb.com/atlas
 
 ```bash
-venv\Scripts\activate
+npm run dev
 ```
 
-**Linux / Mac**
+You should see:
+```
+✅ MongoDB connected successfully
+🚀 Server running on http://localhost:5000
+```
 
+### Step 2 — Setup Frontend
+
+Open a new terminal:
 ```bash
-source venv/bin/activate
+cd expense-tracker/frontend
+npm install
+npm start
 ```
 
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run Application
-
-```bash
-python app.py
-```
-
-Open:
-
-```text
-http://127.0.0.1:5000
-```
+App opens at: http://localhost:3000
 
 ---
 
-## 📊 Application Workflow
+## 🌐 API Endpoints
 
-1. User registers or logs in.
-2. User adds income and expense records.
-3. Expenses are categorized and stored securely.
-4. Dashboard displays spending summaries.
-5. Users can analyze financial patterns and manage budgets effectively.
-
----
-
-## 🎯 Future Enhancements
-
-* Expense Analytics Charts
-* Budget Planning
-* CSV Export
-* Monthly Reports
-* Email Notifications
-* AI-Based Expense Insights
+| Method | Endpoint              | Description             |
+|--------|-----------------------|-------------------------|
+| GET    | /api/expenses         | Get all expenses        |
+| POST   | /api/expenses         | Add new expense         |
+| PUT    | /api/expenses/:id     | Update expense          |
+| DELETE | /api/expenses/:id     | Delete expense          |
 
 ---
 
-## 👨‍💻 Author
+## 🛠️ Tech Stack
 
-**Dhinesh R**
-
-LinkedIn: [www.linkedin.com/in/dhinesh-r-878889296](http://www.linkedin.com/in/dhinesh-r-878889296)
-
----
-
-## 📜 License
-
-This project is developed for educational and learning purposes.
+| Layer    | Technology                  |
+|----------|-----------------------------|
+| Frontend | React 18, Context API, CSS  |
+| Backend  | Node.js, Express.js         |
+| Database | MongoDB, Mongoose           |
