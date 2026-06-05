@@ -15,5 +15,5 @@
     "production": [">0.2%", "not dead"],
     "development": ["last 1 chrome version"]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://expense-tracker-7498.onrender.com/"
 }
