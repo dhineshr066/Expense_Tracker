@@ -8,11 +8,6 @@ A modern web-based Expense Tracker application that helps users manage their dai
 https://expense-tracker-5-wa2u.onrender.com
 
 ---
-# 💰 Smart Expense Tracker
-
-A full-stack web application to track and manage expenses.
-
----
 
 ## 📁 Project Structure
 
